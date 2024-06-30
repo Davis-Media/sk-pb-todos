@@ -45,15 +45,27 @@
 					{#each todo.todos as t}
 						<div class="flex w-full flex-row items-center justify-between p-3">
 							<h4>{t.name}</h4>
-							<Switch
-								checked={t.isDone}
-								disabled={isLoading}
-								onclick={async () => {
-									isLoading = true;
-									await todo.toggleTodo(t.id);
-									isLoading = false;
-								}}
-							/>
+
+							<div class="flex flex-row items-center gap-4">
+								<Button
+									class="bg-red-600 text-white"
+									disabled={isLoading}
+									onclick={async () => {
+										isLoading = true;
+										await todo.deleteTodo(t.id);
+										isLoading = false;
+									}}>Del</Button
+								>
+								<Switch
+									checked={t.isDone}
+									disabled={isLoading}
+									onclick={async () => {
+										isLoading = true;
+										await todo.toggleTodo(t.id);
+										isLoading = false;
+									}}
+								/>
+							</div>
 						</div>
 						<Separator />
 					{/each}
