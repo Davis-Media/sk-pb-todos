@@ -26,7 +26,7 @@
 </script>
 
 {#if auth.user}
-	<div class="grid w-full min-h-[100dvh] grid-cols-1 lg:grid-cols-2">
+	<div class="grid min-h-[100dvh] w-full grid-cols-1 lg:grid-cols-2">
 		<div class="flex items-center justify-center bg-muted p-6 lg:p-12">
 			<div class="max-w-md space-y-4">
 				<h1 class="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -43,7 +43,7 @@
 				</Card.Header>
 				<div class="w-full px-4">
 					{#each todo.todos as t}
-						<div class="w-full flex flex-row justify-between items-center p-3">
+						<div class="flex w-full flex-row items-center justify-between p-3">
 							<h4>{t.name}</h4>
 							<Switch
 								checked={t.isDone}
@@ -58,9 +58,9 @@
 						<Separator />
 					{/each}
 				</div>
-				<Card.Footer class="w-full flex flex-col items-start gap-3 pt-3">
+				<Card.Footer class="flex w-full flex-col items-start gap-3 pt-3">
 					<Label for="task">Task Name</Label>
-					<div class="w-full flex flex-row justify-between gap-3 items-center">
+					<div class="flex w-full flex-row items-center justify-between gap-3">
 						<Input placeholder="my task" class="grow" name="task" bind:value={todoName}></Input>
 						<Button
 							disabled={isLoading || todoName === ''}
@@ -76,7 +76,7 @@
 		</div>
 	</div>
 {:else}
-	<div class="grid w-full min-h-[100dvh] grid-cols-1 lg:grid-cols-2">
+	<div class="grid min-h-[100dvh] w-full grid-cols-1 lg:grid-cols-2">
 		<div class="flex items-center justify-center bg-muted p-6 lg:p-12">
 			<div class="max-w-md space-y-4">
 				<h1 class="text-3xl font-bold tracking-tight sm:text-4xl">

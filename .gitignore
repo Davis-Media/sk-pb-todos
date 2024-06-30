@@ -1,5 +1,6 @@
 node_modules
 
+
 # Output
 .output
 .vercel
@@ -7,6 +8,7 @@ node_modules
 /build
 
 /POCKETBASE/pocketbase
+/POCKETBASE/pb_data
 
 # OS
 .DS_Store
